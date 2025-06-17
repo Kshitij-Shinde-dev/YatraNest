@@ -1,0 +1,18 @@
+.img{
+    max-width: 5rem;
+    max-height: 5rem;
+}
+.color1{
+    background-color: #e7e3c9;
+}
+.spacing{
+    margin-right: 2rem;
+}
+.navbg{
+    color: #6bc3d2;
+    /* background-color: #6bc3d2; */
+    border: 0cm;
+    border-radius: 10px;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}

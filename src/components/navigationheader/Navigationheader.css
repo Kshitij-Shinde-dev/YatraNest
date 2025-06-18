@@ -1,13 +1,15 @@
 .img {
   max-width: 7rem;
   max-height: 7rem;
+  margin-left: 1rem;
 }
-.color1 {
-  background-color: #eae9d3 !important; /* ensure it overrides Bootstrap */
+.navhead {
+  background-color: #eae9d3 !important; 
+  z-index: 1030;
 }
 
 .spacing {
-  margin-right: 1rem;
+  margin-right: 0.5rem;
 }
 
 .navbg {
@@ -25,6 +27,4 @@
   color: #45929f !important;
 }
 
-.stick {
-  z-index: 1030;
-}
+

@@ -1,10 +1,16 @@
 import React, { useState } from "react";
 import "./Homepage.css";
 import Card from "react-bootstrap/Card";
-import {  Row, Col } from "react-bootstrap";
+import { Table, Row, Col } from "react-bootstrap";
 import { IoNotifications } from "react-icons/io5";
 import { BiSolidOffer } from "react-icons/bi";
 import { FaMapLocationDot } from "react-icons/fa6";
+import { FaWifi } from "react-icons/fa";
+import { FaBottleWater } from "react-icons/fa6";
+import { GiPillow } from "react-icons/gi";
+import { TiBatteryCharge } from "react-icons/ti";
+import { IoBook } from "react-icons/io5";
+import { GiFlexibleLamp } from "react-icons/gi";
 function Homepage() {
   const [activeTab, setActiveTab] = useState("booking");
 
@@ -72,10 +78,10 @@ function Homepage() {
   };
 
   return (
-    <div className="main">
+    <div className="background">
     <div className="bus-booking">
-      <Card className="card-booking">
-        <div className="header mb-3">
+      <Card className="card-booking mt-0">
+        <div className="header1 mb-3 ">
           <div
             className={`tab ${activeTab === "booking" ? "active" : ""}`}
             onClick={() => setActiveTab("booking")}
@@ -92,6 +98,29 @@ function Homepage() {
         {renderSection()}
       </Card>
     </div>
+  
+    {/* <div>
+      <Table>
+        <Row>
+          <Card>
+            <Table>
+              <Row>
+                <Col></Col>
+                <Col></Col>
+                <Col></Col>
+                <Col></Col>
+              </Row>
+              <Row>
+                 <Col></Col>
+                <Col></Col>
+                <Col></Col>
+                <Col></Col>
+              </Row>
+            </Table>
+          </Card>
+        </Row>
+      </Table>
+    </div> */}
 
 
 
@@ -101,7 +130,7 @@ function Homepage() {
           <Col>
         <Card className="align">
       <Card.Body>
-        <Card.Title> <IoNotifications/>    Notification</Card.Title>
+        <Card.Title> <IoNotifications size={25} color="red"/>    Notification</Card.Title>
         <hr></hr>
         
         <Card.Text>
@@ -117,9 +146,8 @@ function Homepage() {
       <Col>
       <Card className="align mx-3">
       <Card.Body>
-        <Card.Title><BiSolidOffer /> Ongoing Offers</Card.Title>
+        <Card.Title><BiSolidOffer size={25} color="#28C941"/> Ongoing Offers</Card.Title>
         <hr></hr>
-        
         <Card.Text>
          10% discount Offer Get 10% Off on booking
         </Card.Text>
@@ -131,7 +159,7 @@ function Homepage() {
       <Col>
       <Card className="align">
       <Card.Body>
-        <Card.Title> <FaMapLocationDot /> Top Destinations</Card.Title>
+        <Card.Title> <FaMapLocationDot size={25} color="#4B0082"/> Top Destinations</Card.Title>
       <hr></hr>
         <Card.Text>
           <ul>
@@ -147,7 +175,81 @@ function Homepage() {
     </Col>
     </Row>
     </table>
+    </div>
 
+
+
+     <div className="facility-div">
+      <Table>
+        <Row  className="facility-header">Amenities</Row>
+        <Row>
+      <Col><Card className="facility-card mt-2 bg-light">
+      <Card.Body>
+          <Card.Title className="text-center"><FaWifi size={30} color="#00BFFF"/></Card.Title>
+          <hr></hr>
+        <Card.Text className="card-facility">
+          Wifi
+        </Card.Text>
+      </Card.Body>
+    </Card>
+    </Col>
+
+     <Col><Card className="facility-card mt-2 bg-light">
+      <Card.Body>
+          <Card.Title className="text-center"><FaBottleWater size={30} color="#708090"/></Card.Title>
+          <hr></hr>
+        <Card.Text className="card-facility">
+         Water Bottle
+        </Card.Text>
+      </Card.Body>
+    </Card>
+    </Col>
+
+     <Col><Card className="facility-card mt-2 bg-light">
+      <Card.Body>
+          <Card.Title className="text-center"><GiPillow size={30} color="#D8BFD8" /></Card.Title>
+          <hr></hr>
+        <Card.Text className="card-facility">
+          Pillows
+        </Card.Text>
+      </Card.Body>
+    </Card>
+    </Col>
+
+     <Col><Card className="facility-card mt-2 bg-light">
+      <Card.Body>
+          <Card.Title className="text-center"><TiBatteryCharge size={30} color="#28CD41"/></Card.Title>
+          <hr></hr>
+        <Card.Text className="card-facility">
+         Charger Point
+        </Card.Text>
+      </Card.Body>
+    </Card>
+    </Col>
+
+     <Col><Card className="facility-card mt-2 bg-light">
+      <Card.Body>
+          <Card.Title className="text-center "><IoBook size={30} color="#8B4513" /></Card.Title>
+          <hr></hr>
+        <Card.Text className="card-facility">
+        Novel
+        </Card.Text>
+      </Card.Body>
+    </Card>
+    </Col>
+
+     <Col><Card className="facility-card mt-2 bg-light ">
+      <Card.Body>
+          <Card.Title className="text-center"><GiFlexibleLamp size={30} color="#FFD700" /></Card.Title>
+          <hr></hr>
+        <Card.Text className="card-facility">
+         Reading Lamp
+        </Card.Text>
+      </Card.Body>
+    </Card>
+    </Col>
+        </Row>
+      </Table>
     </div>
     </div>
   );

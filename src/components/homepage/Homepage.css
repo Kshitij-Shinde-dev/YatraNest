@@ -1,0 +1,96 @@
+.header {
+  display: flex;
+  background-color: white;
+  color: #327f8c;
+  border-radius: 6px;
+  overflow: hidden;
+    border: 1px solid rgb(183, 183, 183);
+}
+
+.tab {
+  flex: 1;
+  padding: 15px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.tab.active {
+  background-color:#eae9d3;
+  font-weight: bold;
+}
+
+.form-section {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 10px;
+  background-color: white;
+}
+
+.form-group {
+  margin: 10px;
+  flex: 1 1 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group input,
+.form-group select {
+  padding: 8px;
+  font-size: 14px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.search-button {
+  margin-top: 2.5rem;
+  padding: 8px;
+  background-color: orange;
+  color: white;
+  border: none;
+  font-weight: bold;
+  /* font-size: 12px; */
+  border-radius: 10px;
+  cursor: pointer;
+  max-height: fit-content;
+}
+.hire-button
+{
+  margin-top: 4rem;
+  padding: 8px;
+  background-color: orange;
+  color: white;
+  border: none;
+  font-weight: bold;
+  /* font-size: 12px; */
+  border-radius: 10px;
+  cursor: pointer;
+  max-height: fit-content;
+}
+
+
+.exchange-icon {
+  font-size: 24px;
+  margin: 35px 10px 0;
+}
+.bus-booking
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+.card-booking{
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    width: 900px;
+    padding: 20px;
+}
+
+.align
+{
+    max-width: 25rem;
+    min-height: 15rem;
+    margin-bottom: 3rem;
+}

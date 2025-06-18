@@ -1,30 +1,29 @@
-import React from 'react'
+import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import './Navigationheader.css'
+import './Navigationheader.css';
 
 function Navigationheader() {
   return (
-    <div>
-      <Navbar expand="lg" className='shadow color1 sticky'>
-        <Container>
-          <Navbar.Brand href='/'><img src='./Images/YatraNest.png' alt='logo' className='img ms-3'></img></Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        </Container>
-         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="/Aboutuspage" className='spacing navbg'>About&nbsp;us</Nav.Link>
-            <Nav.Link href="/Cancellationpage" className='spacing navbg'>Cancellation</Nav.Link>
-            <Nav.Link href='/Bookingenquirypage' className='spacing navbg'>Booking&nbsp;Enquiry</Nav.Link>
-            <Nav.Link href='/Managebookingpage' className='spacing navbg'>Manage&nbsp;Booking</Nav.Link>
-            <Nav.Link href='/Loginpage' className='spacing navbg'>Login</Nav.Link>
+    <Navbar expand="lg" className="shadow color1 stick" sticky="top">
+      <Container>
+        <Navbar.Brand href="/">
+          <img src="./Images/YatraNest-2.png" alt="YatraNest Logo" className="img spacing" />
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="ms-auto">
+            <Nav.Link href="/Aboutuspage" className="navbg spacing">About&nbsp;Us</Nav.Link>
+            <Nav.Link href="/Cancellationpage" className="navbg spacing">Cancellation</Nav.Link>
+            <Nav.Link href="/Bookingenquirypage" className="navbg spacing">Booking&nbsp;Enquiry</Nav.Link>
+            <Nav.Link href="/Managebookingpage" className="navbg spacing">Manage&nbsp;Booking</Nav.Link>
+            <Nav.Link href="/Loginpage" className="navbg spacing">Login</Nav.Link>
           </Nav>
-          </Navbar.Collapse>
-      </Navbar>
-    </div>
-  )
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+  );
 }
 
-export default Navigationheader
+export default Navigationheader;

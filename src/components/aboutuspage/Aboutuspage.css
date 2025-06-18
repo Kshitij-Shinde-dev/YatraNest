@@ -1,0 +1,14 @@
+.card{
+    max-width: 70%;
+    margin: 2rem;
+    padding: 3rem;
+    align-items: center;
+    text-align: center;
+    background-color: #84d9e857;
+}
+.heading{
+    color: #e69646;
+}
+p {
+  line-height: 1.8;
+}

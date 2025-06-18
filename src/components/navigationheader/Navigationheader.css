@@ -1,18 +1,30 @@
-.img{
-    max-width: 5rem;
-    max-height: 5rem;
+.img {
+  max-width: 7rem;
+  max-height: 7rem;
 }
-.color1{
-    background-color: #e7e3c9;
+.color1 {
+  background-color: #eae9d3 !important; /* ensure it overrides Bootstrap */
 }
-.spacing{
-    margin-right: 2rem;
+
+.spacing {
+  margin-right: 1rem;
 }
-.navbg{
-    color: #6bc3d2;
-    /* background-color: #6bc3d2; */
-    border: 0cm;
-    border-radius: 10px;
-    padding-left: 3rem;
-    padding-right: 3rem;
+
+.navbg {
+  color: #327f8c !important;
+  background-color: transparent;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  font-weight: 400;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbg:hover {
+  background-color: #e5e4cc;
+  color: #45929f !important;
+}
+
+.stick {
+  z-index: 1030;
 }

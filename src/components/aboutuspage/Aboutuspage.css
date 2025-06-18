@@ -1,10 +1,6 @@
-.card{
-    max-width: 70%;
+.cardabout{
+    margin-top: 50px;
     margin: 2rem;
-    padding: 3rem;
-    align-items: center;
-    text-align: center;
-    background-color: #84d9e857;
 }
 .heading{
     color: #e69646;

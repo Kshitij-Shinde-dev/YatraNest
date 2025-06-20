@@ -3,10 +3,11 @@ import './Loginpage.css'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 function Loginpage() {
   
-    const [email, setEmail] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
@@ -54,6 +55,9 @@ function Loginpage() {
       />
       <button type="submit">Login</button>
     </form>
+    <span className='text-muted'>
+    Don't have an account? <Link to="/Signup" className="ms-1">Signup</Link>
+    </span>
   </div>
 );
   

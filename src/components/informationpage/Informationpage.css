@@ -1,0 +1,23 @@
+.information-main
+{
+    background-color: none;
+}
+.no-underline
+{
+    text-decoration: none;
+}
+.info-head
+{
+    color: #FF8C00;
+}
+.copyright
+{
+    background-color: #327f8c;
+    color: white;
+    padding: 10px;
+}
+.info-copy
+{
+    color: #ff8c00c0;
+    text-decoration: none;
+}

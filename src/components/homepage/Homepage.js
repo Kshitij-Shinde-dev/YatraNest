@@ -11,6 +11,7 @@ import { GiPillow } from "react-icons/gi";
 import { TiBatteryCharge } from "react-icons/ti";
 import { IoBook } from "react-icons/io5";
 import { GiFlexibleLamp } from "react-icons/gi";
+import Informationpage from "../informationpage/Informationpage";
 function Homepage() {
   const [activeTab, setActiveTab] = useState("booking");
 
@@ -78,6 +79,7 @@ function Homepage() {
   };
 
   return (
+    <div>
     <div className="background">
     <div className="bus-booking">
       <Card className="card-booking mt-0">
@@ -252,6 +254,9 @@ function Homepage() {
       </Table>
     </div>
     </div>
+    <Informationpage></Informationpage>
+    </div>
+    
   );
 }
 

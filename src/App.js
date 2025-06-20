@@ -10,6 +10,7 @@ import Bookingenquirypage from './components/bookingenquirypage/Bookingenquirypa
 import Managebookingpage from './components/managebookingpage/Managebookingpage';
 import Loginpage from './components/loginpage/Loginpage';
 import Signup from './components/Signup/Signup';
+import Gallerypage from './components/gallery/Gallerypage';
 
 
 function App() {

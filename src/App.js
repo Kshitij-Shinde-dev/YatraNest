@@ -9,6 +9,7 @@ import Cancellationpage from './components/cancellationpage/Cancellationpage';
 import Bookingenquirypage from './components/bookingenquirypage/Bookingenquirypage';
 import Managebookingpage from './components/managebookingpage/Managebookingpage';
 import Loginpage from './components/loginpage/Loginpage';
+import Signup from './components/Signup/Signup';
 
 
 function App() {
@@ -23,6 +24,8 @@ function App() {
           <Route path='/Bookingenquirypage' element={<Bookingenquirypage></Bookingenquirypage>}></Route>
           <Route path='/Managebookingpage' element={<Managebookingpage></Managebookingpage>}></Route>
           <Route path='/Loginpage' element={<Loginpage></Loginpage>}></Route>
+          <Route path='/Signup' element={<Signup></Signup>}></Route>
+          <Route path='Gallerypage' element={<Gallerypage></Gallerypage>}></Route>
         </Routes>
       </Router>
       

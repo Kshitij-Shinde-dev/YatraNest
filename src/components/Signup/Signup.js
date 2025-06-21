@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Form, Button, Container, Row, Col, Alert } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import './signup.css'
 
 function Signup() {
   const navigate = useNavigate();
@@ -43,14 +44,15 @@ function Signup() {
   };
 
   return (
-    <Container className="mt-4">
+    <Container className="my-4 bg">
       <Row className="justify-content-center">
         <Col md={6}>
-          <h3 className="mb-4 text-center">Sign Up</h3>
+          <h3 className="mb-4 text-center head-color">Sign Up</h3>
           {error && <Alert variant="danger">{error}</Alert>}
           <Form onSubmit={handleSubmit}>
-            <Form.Group className="mb-3">
-              <Form.Label>Full Name</Form.Label>
+            <Form.Group as={Row} className="mb-3 align-items-center">
+              <Form.Label column sm={4}>Full Name</Form.Label>
+              <Col sm={8}>
               <Form.Control
                 type="text"
                 placeholder="Enter your name"
@@ -59,10 +61,12 @@ function Signup() {
                 onChange={handleChange}
                 required
               />
+              </Col>
             </Form.Group>
 
-            <Form.Group className="mb-3">
-              <Form.Label>Gender</Form.Label>
+            <Form.Group as={Row} className="mb-3 align-items-center">
+              <Form.Label column sm={4}>Gender</Form.Label>
+              <Col sm={8}>
               <Form.Select
                 name="gender"
                 value={formData.gender}
@@ -74,10 +78,12 @@ function Signup() {
                 <option>Female</option>
                 <option>Other</option>
               </Form.Select>
+              </Col>
             </Form.Group>
 
-            <Form.Group className="mb-3">
-              <Form.Label>Mobile Number</Form.Label>
+            <Form.Group as={Row} className="mb-3 align-items-center">
+              <Form.Label column sm={4}>Mobile Number</Form.Label>
+              <Col sm={8}>
               <Form.Control
                 type="tel"
                 placeholder="Enter mobile number"
@@ -87,10 +93,12 @@ function Signup() {
                 pattern="[0-9]{10}"
                 required
               />
+              </Col>
             </Form.Group>
 
-            <Form.Group className="mb-3">
-              <Form.Label>Email Address</Form.Label>
+            <Form.Group as={Row} className="mb-3 align-items-center">
+              <Form.Label column sm={4}>Email Address</Form.Label>
+              <Col sm={8}>
               <Form.Control
                 type="email"
                 placeholder="Enter email"
@@ -99,10 +107,12 @@ function Signup() {
                 onChange={handleChange}
                 required
               />
+              </Col>
             </Form.Group>
 
-            <Form.Group className="mb-3">
-              <Form.Label>Password</Form.Label>
+            <Form.Group as={Row} className="mb-3 align-items-center">
+              <Form.Label column sm={4} >Password</Form.Label>
+              <Col sm={8}>
               <Form.Control
                 type="password"
                 placeholder="Enter password"
@@ -111,10 +121,12 @@ function Signup() {
                 onChange={handleChange}
                 required
               />
+              </Col>
             </Form.Group>
 
-            <Form.Group className="mb-4">
-              <Form.Label>Confirm Password</Form.Label>
+            <Form.Group as={Row} className="mb-3 align-items-center">
+              <Form.Label column sm={4}>Confirm Password</Form.Label>
+              <Col sm={8}>
               <Form.Control
                 type="password"
                 placeholder="Confirm password"
@@ -123,9 +135,9 @@ function Signup() {
                 onChange={handleChange}
                 required
               />
+              </Col>
             </Form.Group>
-
-            <Button type="submit" className="w-100" variant="primary">
+            <Button type="submit" className="signup-button">
               Sign Up
             </Button>
           </Form>

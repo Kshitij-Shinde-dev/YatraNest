@@ -37,7 +37,7 @@ function Loginpage() {
   };
     return (
   <div className="login-container">
-    <h2>Login</h2>
+    <h2 className='head-color'>Login</h2>
     <form onSubmit={handleSubmit} className="login-form">
       <input
         type="email"
@@ -53,7 +53,7 @@ function Loginpage() {
         onChange={(e) => setPassword(e.target.value)}
         required
       />
-      <button type="submit">Login</button>
+      <button type="submit" className='login-button w-50 my-2 d-block mx-auto'>Login</button>
     </form>
     <span className='text-muted'>
     Don't have an account? <Link to="/Signup" className="ms-1">Signup</Link>

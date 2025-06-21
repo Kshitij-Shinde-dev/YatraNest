@@ -1,0 +1,16 @@
+.bg{
+    margin: 100px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    text-align: center;
+    background-color: #e7e6e6da;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+.head-color{
+    color: #327f8c !important;
+}
+.signup-button{
+    background-color: orange !important;
+    border-color: rgba(255, 68, 0, 0.518) !important;
+}

@@ -6,11 +6,16 @@
 .gallery-img {
   width: 100%;
   height: auto;
-  border-radius: 8px;
+  border-radius: 20px;
   transition: transform 0.3s ease;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .gallery-img:hover {
   transform: scale(1.05);
+}
+.gallery-card
+{
+    margin: 20px;
+    border-radius: 50px;
 }

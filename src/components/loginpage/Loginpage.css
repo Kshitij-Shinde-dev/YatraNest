@@ -48,3 +48,10 @@
 .login-form button:hover {
   background-color: #0056b3;
 }
+.head-color{
+    color: #327f8c !important;
+}
+.login-button{
+  background-color: orange !important;
+  border-color: rgba(255, 68, 0, 0.518) !important;
+}

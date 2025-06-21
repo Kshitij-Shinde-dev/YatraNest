@@ -23,10 +23,10 @@ function Informationpage() {
           <Col  md={3}>
             <h5 className='info-head'>Info</h5>
             <ul  className='list-unstyled'>
-              <li>Term and Condition</li>
-              <li>Privacy Policy</li>
-              <li>Contact us</li>
-              <li>Feedback</li>
+              <li><Link to={'/Termpage'} className='text-decoration-none text-black'>Terms and Conditions</Link></li>
+              <li><Link to={'/Policypage'} className='text-decoration-none text-black'>Privacy Policy</Link></li>
+              <li><Link to={'/Contactuspage'} className='text-decoration-none text-black'>Contact us</Link></li>
+              <li><Link to={'/Feedbackpage'} className='text-decoration-none text-black'>Feedback</Link></li>
               
             </ul>
           </Col>

@@ -256,7 +256,6 @@ function Homepage() {
     </div>
     <Informationpage></Informationpage>
     </div>
-    
   );
 }
 

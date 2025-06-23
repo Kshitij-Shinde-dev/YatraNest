@@ -4,8 +4,12 @@
     border-radius: 20px;
 }
 .card-term-heading{
-    color: #e69646;
+  color: #327f8c !important;
 }
 p {
   line-height: 1.8;
+}
+.main-term
+{
+   background-color: rgb(237, 235, 235);
 }

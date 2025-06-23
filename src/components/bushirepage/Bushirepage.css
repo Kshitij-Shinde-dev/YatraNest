@@ -1,10 +1,15 @@
-.head-corporate
-{
-    color: #327f8c !important;
+.card {
+  border-radius: 20px;
+  background-color: #ffffff;
 }
-.enquiry-direction-button {
+
+h2 {
+  font-weight: bold;
+}
+.hire-button
+{
   display: block;
-  /* margin: 1.5rem auto 0; */
+  margin: 1.5rem auto 0;
   background-color: #fca652 !important;
   color: white;
   border: none;
@@ -17,6 +22,16 @@
   text-decoration: none;
 }
 
-.enquiry-direction-button:hover {
+.hire-button:hover {
+
   background-color: #e28c3d !important;
+  color: #e0e0e0;
+}
+.head-hire
+{
+     color: #327f8c !important;
+}
+.main-hire
+{
+     background-color: rgb(237, 235, 235);
 }

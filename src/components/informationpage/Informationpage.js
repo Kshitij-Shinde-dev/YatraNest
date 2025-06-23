@@ -15,7 +15,7 @@ function Informationpage() {
             <h5 className='info-head'>Company</h5>
             <ul className='list-unstyled'>
               <li><Link to={'/Aboutuspage'} className='text-decoration-none text-black'>About Us</Link></li>
-              <li>Bus Hire</li>
+              <li><Link to={'/Bushirepage'} className=' text-decoration-none text-black'>Bus Hire </Link></li>
               <li > <Link to={'/Gallerypage'} className='text-decoration-none text-black'>Gallery</Link></li>
               <li> <Link to={'/Routepage'} className='text-decoration-none text-black'>Routes</Link></li>
             </ul>
@@ -38,7 +38,7 @@ function Informationpage() {
             <h5 className='info-head'>Corporate Office</h5>
             <ul  className='list-unstyled'>
               <li>Pune</li>
-              <li>Shivajinagar</li>
+              <li>Balajinagar</li>
               <li>Pincode-411003</li>
             </ul>
           </Col>

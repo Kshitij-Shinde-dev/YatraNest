@@ -1,10 +1,15 @@
 .cardabout{
-    margin-top: 50px;
+    /* margin-top: 10px; */
     margin: 2rem;
 }
 .heading{
-    color: #e69646;
+     color: #327f8c !important;
 }
 p {
   line-height: 1.8;
+}
+.main-about
+{
+  min-height: 100vh;
+  background-color: rgb(237, 235, 235);
 }

@@ -4,8 +4,9 @@ import { Card } from 'react-bootstrap'
 
 function Aboutuspage() {
   return (
-    <div className='d-flex justify-content-center align-items-center '>
-       <Card className="cardabout shadow p-4 my-4">
+
+    <div className='main-about d-flex justify-content-center '>
+       <Card className="cardabout shadow p-4 ">
       <h2 className="mb-3">
         <span className="heading">About YatraNest</span>
       </h2>

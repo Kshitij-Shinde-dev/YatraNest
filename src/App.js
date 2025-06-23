@@ -15,7 +15,7 @@ import Contactuspage from './components/contactuspage/Contactuspage';
 import Policypage from './components/policypage/Policypage';
 import Termpage from './components/termpage/Termpage';
 import Routepage from './components/routepage/Routepage';
-
+import Bushirepage from './components/bushirepage/Bushirepage';
 function App() {
   return (
     <div>
@@ -35,10 +35,9 @@ function App() {
             <Route path='/Policypage' element={<Policypage></Policypage>}></Route>
             <Route path='/Termpage' element={<Termpage></Termpage>}></Route>
             <Route path='/Routepage' element={<Routepage></Routepage>}></Route>
+            <Route path='/Bushirepage' element={<Bushirepage></Bushirepage>}></Route>
           </Routes>
       </Router>
-   
-      
     </div>
   );
 }

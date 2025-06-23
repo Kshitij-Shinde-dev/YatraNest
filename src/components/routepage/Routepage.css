@@ -1,0 +1,42 @@
+.bg-route
+{
+  background-color: rgb(237, 235, 235);
+}
+.route-card {
+  background-color: #fefefe;
+  border: 1px solid #e0e0e0;
+}
+
+.route-card:hover {
+  transform: scale(1.01);
+  transition: 0.3s ease;
+}
+.head-route
+{
+    color: #FF8C00;;
+}
+.book-button {
+  display: block;
+  /* margin: 1.5rem auto 0; */
+  background-color: #fca652 !important;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.book-button:hover {
+
+  background-color: #e28c3d !important;
+  color: #e0e0e0;
+}
+.route-se
+{
+    color: #327f8c !important;
+    font-weight: 700;
+}

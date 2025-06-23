@@ -17,7 +17,7 @@ function Informationpage() {
               <li><Link to={'/Aboutuspage'} className='text-decoration-none text-black'>About Us</Link></li>
               <li>Bus Hire</li>
               <li > <Link to={'/Gallerypage'} className='text-decoration-none text-black'>Gallery</Link></li>
-              <li>Routes</li>
+              <li> <Link to={'/Routepage'} className='text-decoration-none text-black'>Routes</Link></li>
             </ul>
           </Col>
           <Col  md={3}>
@@ -26,7 +26,7 @@ function Informationpage() {
               <li><Link to={'/Termpage'} className='text-decoration-none text-black'>Terms and Conditions</Link></li>
               <li><Link to={'/Policypage'} className='text-decoration-none text-black'>Privacy Policy</Link></li>
               <li><Link to={'/Contactuspage'} className='text-decoration-none text-black'>Contact us</Link></li>
-              <li><Link to={'/Feedbackpage'} className='text-decoration-none text-black'>Feedback</Link></li>
+          
               
             </ul>
           </Col>

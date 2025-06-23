@@ -1,9 +1,17 @@
 import React from 'react'
 import './Managebookingpage.css'
+import { Card, CardBody, CardHeader } from 'react-bootstrap'
 
 function Managebookingpage() {
   return (
-    <div>Managebookingpage</div>
+    <div>
+      <Card>
+        <CardHeader>Manage your booking</CardHeader>
+        <CardBody>
+          
+        </CardBody>
+      </Card>
+    </div>
   )
 }
 

@@ -1,0 +1,22 @@
+.head-corporate
+{
+    color:  #e69646;;
+}
+.enquiry-direction-button {
+  display: block;
+  /* margin: 1.5rem auto 0; */
+  background-color: #fca652 !important;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.enquiry-direction-button:hover {
+  background-color: #e28c3d !important;
+}

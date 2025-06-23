@@ -44,7 +44,7 @@ function Signup() {
   };
 
   return (
-    <Container className="my-4 bg">
+    <Container className="mt-5 bg">
       <Row className="justify-content-center">
         <Col md={6}>
           <h3 className="mb-4 text-center head-color">Sign Up</h3>

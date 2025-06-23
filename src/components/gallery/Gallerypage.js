@@ -1,14 +1,14 @@
 import React from 'react';
 import './Gallerypage.css';
 import { Container, Row, Col } from 'react-bootstrap';
-import { Card } from 'react-bootstrap';
+// import { Card } from 'react-bootstrap';
 
 function Gallerypage() {
   return (
     <div className="gallery-page">
-    <Card className='gallery-card'>
+    {/* <Card className='gallery-card'> */}
       <Container>
-        <h2 className='my-3 d-flex justify-content-center'>Gallery</h2>
+        <h2 className=' head-gallery my-3 d-flex justify-content-center'>Gallery</h2>
         {/* Row 1 */}
         <Row className="mb-4">
           <Col><img src= "./Images/Gone.jpg"alt="Gallery 1" className="gallery-img" /></Col>
@@ -37,7 +37,7 @@ function Gallerypage() {
           <Col><img src="./Images/Gtwe.jpg" alt="Gallery 12" className="gallery-img" /></Col>
         </Row>
       </Container>
-      </Card>
+      {/* </Card> */}
     </div>
   );
 }

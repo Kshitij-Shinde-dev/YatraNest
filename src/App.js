@@ -14,6 +14,7 @@ import Gallerypage from './components/gallery/Gallerypage';
 import Contactuspage from './components/contactuspage/Contactuspage';
 import Policypage from './components/policypage/Policypage';
 import Termpage from './components/termpage/Termpage';
+import Routepage from './components/routepage/Routepage';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
             <Route path='/Contactuspage' element={<Contactuspage></Contactuspage>}></Route>
             <Route path='/Policypage' element={<Policypage></Policypage>}></Route>
             <Route path='/Termpage' element={<Termpage></Termpage>}></Route>
+            <Route path='/Routepage' element={<Routepage></Routepage>}></Route>
           </Routes>
       </Router>
    

@@ -37,7 +37,14 @@ const routes = [
     startTime: '6:30 AM',
     endTime: '12:00 PM',
     mapLink: 'https://www.google.com/maps/dir/Pune,+Maharashtra/Nashik,+Maharashtra/@19.3152524,73.6625918,8.97z/data=!4m13!4m12!1m5!1m1!1s0x3bc2bf2e67461101:0x828d43bf9d9ee343!2m2!1d73.8786239!2d18.5246091!1m5!1m1!1s0x3bddd290b09914b3:0xcb07845d9d28215c!2m2!1d73.7900188!2d19.9993217?entry=ttu&g_ep=EgoyMDI1MDYxNy4wIKXMDSoASAFQAw%3D%3D'
-  }
+  },
+  {
+    from: 'Pune',
+    to: 'Nagpur',
+    startTime: '5:00 PM',
+    endTime: '8:00 AM',
+    mapLink: 'https://www.google.com/maps/dir/Pune,+Maharashtra/Nagpur,+Maharashtra/@19.8209399,73.8129178,7z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x3bc2bf2e67461101:0x828d43bf9d9ee343!2m2!1d73.8786239!2d18.5246091!1m5!1m1!1s0x3bd4c0a5a31faf13:0x19b37d06d0bb3e2b!2m2!1d79.0881546!2d21.1458004!3e0?entry=ttu&g_ep=EgoyMDI1MDYxNy4wIKXMDSoASAFQAw%3D%3D'
+  },
 ];
 
 function Routepage() {

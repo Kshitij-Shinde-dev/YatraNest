@@ -185,7 +185,8 @@ function Homepage() {
       <Table>
         <Row  className="facility-header">Amenities</Row>
         <Row>
-      <Col><Card className="facility-card mt-2 bg-light">
+      <Col>
+      <Card className="facility-card mt-2 bg-light">
       <Card.Body>
           <Card.Title className="text-center"><FaWifi size={30} color="#00BFFF"/></Card.Title>
           <hr></hr>

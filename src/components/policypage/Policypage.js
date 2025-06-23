@@ -4,7 +4,7 @@ import { Card } from 'react-bootstrap'
 
 function Policypage() {
   return (
-    <div className='d-flex justify-content-center align-items-center'>
+    <div className=' main-policy d-flex justify-content-center align-items-center'>
       <Card className="card-term shadow p-4 my-4">
        <h2 className='mb-3'><span className="card-privacy-heading">Privacy Policy</span></h2>
   <Card.Body className='fs-6 text-dark'>

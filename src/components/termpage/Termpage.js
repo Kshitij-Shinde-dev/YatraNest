@@ -6,7 +6,7 @@ import { Card } from 'react-bootstrap'
 function Termpage()
 {
   return (
-    <div className='d-flex justify-content-center align-items-center '>
+    <div className='main-term d-flex justify-content-center align-items-center '>
            <Card className="card-term shadow p-4 my-4">
           <h2 className="mb-3">
             <span className="card-term-heading">Term & Conditions</span>

@@ -1,8 +1,17 @@
-.head-corporate
-{
-    color:  #e69646;;
+.route-card {
+  background-color: #fefefe;
+  border: 1px solid #e0e0e0;
 }
-.enquiry-direction-button {
+
+.route-card:hover {
+  transform: scale(1.01);
+  transition: 0.3s ease;
+}
+.head-route
+{
+    color: #FF8C00;;
+}
+.book-button {
   display: block;
   /* margin: 1.5rem auto 0; */
   background-color: #fca652 !important;
@@ -17,6 +26,13 @@
   text-decoration: none;
 }
 
-.enquiry-direction-button:hover {
+.book-button:hover {
+
   background-color: #e28c3d !important;
+  color: #e0e0e0;
+}
+.route-se
+{
+    color: #327f8c !important;
+    font-weight: 700;
 }

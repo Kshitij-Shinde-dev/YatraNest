@@ -1,0 +1,24 @@
+body {
+  background-color: #f9f9f9;
+}
+
+.card {
+  border-radius: 12px;
+}
+
+.card-title {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-text {
+  font-size: 0.9rem;
+}
+
+button {
+  font-size: 0.8rem;
+}
+.head-manage
+{
+    color: #327f8c !important;
+}

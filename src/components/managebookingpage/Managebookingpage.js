@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { Card, Button, Container, Row, Col, Form, Badge } from 'react-bootstrap';
 import jsPDF from 'jspdf';
+import 'jspdf-autotable';
+
 import './Managebookingpage.css';
+
 
 const sampleBookings = [
   {
@@ -32,31 +35,117 @@ function Managebookingpage() {
   );
 
   const handleDownloadPDF = (booking) => {
-    const doc = new jsPDF();
+  const doc = new jsPDF('p', 'mm', 'a4');
 
-    doc.setFontSize(16);
-    doc.text("YatraNest Bus Ticket", 20, 20);
+  // Header
+  doc.setFontSize(16);
+  doc.setTextColor(0, 0, 0);
+  doc.text('E-Reservation Ticket', 105, 15, { align: 'center' });
 
-    doc.setFontSize(12);
-    doc.text(`Booking ID: ${booking.id}`, 20, 40);
-    doc.text(`Name: ${booking.name}`, 20, 50);
-    doc.text(`From: ${booking.from}`, 20, 60);
-    doc.text(`To: ${booking.to}`, 20, 70);
-    doc.text(`Date: ${booking.date}`, 20, 80);
-    doc.text(`Time: ${booking.time}`, 20, 90);
-    doc.text(`Status: ${booking.status}`, 20, 100);
+  // Ticket Info
+  let y = 25;
+  const details = [
+    [`Transaction Date & Time:`, new Date().toLocaleString()],
+    [`Bus Service No.:`, booking.id],
+    [`Passenger Boarding Point:`, booking.from],
+    [`Date of Journey:`, booking.date],
+    [`Approx. Boarding Time:`, booking.time],
+    [`Booking Mode:`, 'Online'],
+    [`Transaction ID:`, `TXN${booking.id}`],
+    [`Bus Service Name:`, 'YatraNest Bus'],
+    [`Bus Service Type:`, 'EXPRESS'],
+    [`Passenger Alighting Point:`, booking.to],
+    [`Departure Time from Origin:`, booking.time],
+    [`No. of Seats:`, '1'],
+    [`Depot Name:`, 'Pune']
+  ];
 
-    doc.save(`Ticket_${booking.id}.pdf`);
-  };
+  doc.setFontSize(10);
+  details.forEach(([label, value]) => {
+    doc.text(`${label}`, 15, y);
+    doc.text(`${value}`, 90, y);
+    y += 6;
+  });
+
+  // Route section
+  y += 4;
+  doc.setFontSize(12);
+  doc.setFont(undefined, 'bold');
+  doc.text(`${booking.from} TO ${booking.to}`.toUpperCase(), 105, y, { align: 'center' });
+  doc.setFont(undefined, 'normal');
+  y += 10;
+
+  // Passenger Table
+  doc.autoTable({
+    startY: y,
+    head: [['Name', 'Age', 'Type', 'Sex', 'Seat No', 'Seat Status']],
+    body: [[booking.name, '21', 'Adult', 'M', '25', 'Confirmed']],
+    styles: { fontSize: 10 },
+    theme: 'grid',
+    headStyles: { fillColor: [200, 200, 200] }
+  });
+
+  y = doc.lastAutoTable.finalY + 10;
+
+  // Fare Breakdown Table
+  doc.autoTable({
+    startY: y,
+    head: [['Fare Component', 'Amount (₹)']],
+    body: [
+      ['Basic Fare', '321.60'],
+      ['ASN', '1.00'],
+      ['Reservation', '5.00'],
+      ['Rounding', '0.40'],
+      [{ content: 'Total Ticket Amount', styles: { fontStyle: 'bold' } }, '328.00']
+    ],
+    styles: { fontSize: 10 },
+    theme: 'grid',
+    headStyles: { fillColor: [220, 220, 220] }
+  });
+
+  y = doc.lastAutoTable.finalY + 10;
+
+  // Important Notes
+  doc.setFontSize(9);
+  doc.text('Important:', 15, y);
+  y += 5;
+  const instructions = [
+    '1) This E-Ticket is not transferable. Carry photo ID (Aadhaar, PAN, etc).',
+    '2) Senior Citizens must carry valid age proof.',
+    '3) Without valid ID, concessional ticket becomes invalid.',
+    '4) Corporation may change/cancel the bus service mentioned.',
+    '5) Fare difference is applicable on fare revision.',
+    '6) E-Ticket cancellations allowed before 4 hours of departure:',
+    '   • 10% deduction if cancelled ≥ 24 hrs before departure.',
+    '   • 25% deduction if cancelled ≥ 12 hrs before departure.',
+    '   • 50% deduction if cancelled ≥ 4 hrs before departure.',
+    '   * Reservation & convenience charges non-refundable.'
+  ];
+  instructions.forEach((line, i) => {
+    doc.text(line, 15, y + i * 5);
+  });
+
+  y += instructions.length * 5 + 5;
+  doc.setFontSize(9);
+  doc.text('Wish You Happy Journey', 105, y, { align: 'center' });
+  y += 5;
+  doc.text('Visit us @ www.YatraNest.com | Support: support@yatranest.com', 105, y, { align: 'center' });
+
+  // Save file
+  doc.save(`Ticket_${booking.id}.pdf`);
+};
+
 
   return (
+    <div className="manage-container">
     <Container className="py-5">
-      <h2 className="head-manage text-center mb-4">Manage Your Bookings</h2>
+      <Card>
+      <h2 className="head-manage text-center">Manage Your Bookings</h2>
 
       <Form.Control
         type="text"
         placeholder="Search by Booking ID..."
-        className="mb-4"
+        className="mb-4 mx-auto search-ticket"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
@@ -64,7 +153,7 @@ function Managebookingpage() {
       <Row>
         {filteredBookings.map((booking) => (
           <Col xs={12} sm={12} md={6} lg={4} key={booking.id}>
-            <Card className="mb-4 shadow-sm">
+            <Card className="mb-4 shadow-sm ticket-card">
               <Card.Body>
                 <Card.Title>
                   Booking ID: <strong>{booking.id}</strong>
@@ -118,7 +207,9 @@ function Managebookingpage() {
       {filteredBookings.length === 0 && (
         <p className="text-center text-muted">No bookings found.</p>
       )}
+      </Card>
     </Container>
+    </div>
   );
 }
 

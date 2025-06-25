@@ -2,8 +2,9 @@ body {
   background-color: #f9f9f9;
 }
 
-.card {
+.ticket-card {
   border-radius: 12px;
+  margin-left: 3rem;
 }
 
 .card-title {
@@ -21,4 +22,20 @@ button {
 .head-manage
 {
     color: #327f8c !important;
+    background-color: #e7e3c9;
+    padding: 5px;
+    margin-top: 2rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    border-radius: 10px 10px 0 0;
+}
+.search-ticket
+{
+  max-width: 50%;
+  align-items: center;
+  margin: 1.5rem ;
+}
+.manage-container
+{
+  background-color: rgb(237, 235, 235);
 }

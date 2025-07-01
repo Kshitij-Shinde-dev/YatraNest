@@ -2,20 +2,21 @@ import React, { useState } from "react";
 import "./Homepage.css";
 import Card from "react-bootstrap/Card";
 import { Table, Row, Col } from "react-bootstrap";
-import { IoNotifications } from "react-icons/io5";
+import { IoNotifications, IoBook } from "react-icons/io5";
 import { BiSolidOffer } from "react-icons/bi";
 import { FaMapLocationDot } from "react-icons/fa6";
 import { FaWifi } from "react-icons/fa";
 import { FaBottleWater } from "react-icons/fa6";
-import { GiPillow } from "react-icons/gi";
+import { GiPillow, GiFlexibleLamp } from "react-icons/gi";
 import { TiBatteryCharge } from "react-icons/ti";
-import { IoBook } from "react-icons/io5";
-import { GiFlexibleLamp } from "react-icons/gi";
 import Informationpage from "../informationpage/Informationpage";
 import Select from 'react-select';
 
 function Homepage() {
   const [activeTab, setActiveTab] = useState("booking");
+  const [fromCity, setFromCity] = useState(null);
+  const [toCity, setToCity] = useState(null);
+  const [journeyDate, setJourneyDate] = useState(new Date().toISOString().split("T")[0]);
 
   const cityOptions = [
     { value: 'Nashik', label: 'Nashik' },
@@ -25,6 +26,15 @@ function Homepage() {
     { value: 'Shrirampur', label: 'Shrirampur' },
     { value: 'Solapur', label: 'Solapur' },
   ];
+
+  const handleSearch = () => {
+    if (!fromCity || !toCity || !journeyDate) {
+      alert("Please fill all fields before proceeding.");
+      return;
+    }
+
+    window.location.href = '/Selectberthpage';
+  };
 
   const renderSection = () => {
     switch (activeTab) {
@@ -36,8 +46,8 @@ function Homepage() {
               <Select
                 options={cityOptions}
                 placeholder="Select departure city"
-                isSearchable
-                className="mb-2"
+                value={fromCity}
+                onChange={setFromCity}
               />
             </div>
 
@@ -48,17 +58,26 @@ function Homepage() {
               <Select
                 options={cityOptions}
                 placeholder="Select destination city"
-                isSearchable
-                className="mb-2"
+                value={toCity}
+                onChange={setToCity}
               />
             </div>
 
             <div className="date-select">
               <label>Date</label>
-              <input type="date" defaultValue={new Date().toISOString().split("T")[0]} />
+              <input
+                type="date"
+                value={journeyDate}
+                onChange={(e) => setJourneyDate(e.target.value)}
+                min={new Date().toISOString().split("T")[0]}
+                required
+              />
             </div>
+
             <div className="search-button-div">
-              <button className="search-button">SEARCH</button>
+              <button className="search-button" onClick={handleSearch}>
+                SEARCH
+              </button>
             </div>
           </div>
         );
@@ -68,15 +87,15 @@ function Homepage() {
           <div className="form-section">
             <div className="form-group">
               <label>City of Hire eg: Bangalore</label><br />
-              <input type="text" placeholder="Bangalore" />
+              <input type="text" placeholder="Bangalore" required />
             </div>
             <div className="form-group">
               <label>Starting Point eg: Railway station</label>
-              <input type="text" placeholder="Railway Station" />
+              <input type="text" placeholder="Railway Station" required />
             </div>
             <div className="form-group">
               <label>Destination eg: Airport/Pune</label><br />
-              <input type="text" placeholder="Airport/Pune" />
+              <input type="text" placeholder="Airport/Pune" required />
             </div>
             <button className="hire-button mx-auto d-block">HIRE BUSES</button>
           </div>
@@ -110,6 +129,7 @@ function Homepage() {
           </Card>
         </div>
 
+        {/* Notification / Offers / Top Destinations */}
         <div className="d-flex justify-content-center mt-5">
           <Row>
             <Col>
@@ -133,7 +153,7 @@ function Homepage() {
                   <Card.Title><BiSolidOffer size={25} color="#28C941" /> Ongoing Offers</Card.Title>
                   <hr />
                   <Card.Text>
-                    10% discount Offer Get 10% Off on booking
+                    10% discount Offer - Get 10% Off on booking
                   </Card.Text>
                 </Card.Body>
               </Card>
@@ -159,6 +179,7 @@ function Homepage() {
           </Row>
         </div>
 
+        {/* Amenities */}
         <div className="facility-div">
           <Row className="facility-header">Amenities</Row>
           <Row>
@@ -224,6 +245,7 @@ function Homepage() {
           </Row>
         </div>
       </div>
+
       <Informationpage />
     </div>
   );

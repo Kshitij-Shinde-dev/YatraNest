@@ -1,6 +1,7 @@
 import React from 'react';
 import './Routepage.css';
 import { Card, Button, Container } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const routes = [
   {
@@ -70,7 +71,8 @@ function Routepage() {
               >
                 <Button variant=" outline-info text-dark" className='view-button' size="">View Route</Button>
               </a>
-              <Button variant=" primary"  className='book-button' size="">Book Now</Button>
+              <Link to={'/Booknow'} className='text-decoration-none'>
+              <Button variant=" primary"  className='book-button text-decoration-none' size="">Book Now</Button></Link>
             </div>
           </Card.Body>
         </Card>

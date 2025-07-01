@@ -16,6 +16,8 @@ import Policypage from './components/policypage/Policypage';
 import Termpage from './components/termpage/Termpage';
 import Routepage from './components/routepage/Routepage';
 import Bushirepage from './components/bushirepage/Bushirepage';
+import Booknow from './components/booknow/Booknow';
+import Selectberthpage from './components/selectberthpage/Selectberthpage';
 function App() {
   return (
     <div>
@@ -36,6 +38,8 @@ function App() {
             <Route path='/Termpage' element={<Termpage></Termpage>}></Route>
             <Route path='/Routepage' element={<Routepage></Routepage>}></Route>
             <Route path='/Bushirepage' element={<Bushirepage></Bushirepage>}></Route>
+            <Route path='/Booknow' element={<Booknow></Booknow>}></Route>
+            <Route path='/Selectberthpage' element={<Selectberthpage></Selectberthpage>}></Route>
           </Routes>
       </Router>
     </div>

@@ -46,6 +46,7 @@
   flex: 1 1 200px;
   display: flex;
   flex-direction: column;
+  min-width: 45%;
 }
 
 .form-group input,.form-group select 
@@ -55,6 +56,24 @@
   margin-top: 5px;
   border: 1px solid #ccc;
   border-radius: 4px;
+}
+
+.date-select{
+  margin: 10px;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  width: auto;
+}
+
+.date-select input,.date-select select 
+{
+  padding: 8px;
+  font-size: 14px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 85%;
 }
 
 .search-button 
@@ -69,6 +88,12 @@
   border-radius: 10px;
   cursor: pointer;
   max-height: fit-content;
+}
+
+.search-button-div {
+  display: flex;
+  justify-content: center;
+  width:50%
 }
 
 .hire-button
@@ -99,7 +124,7 @@
 .card-booking{
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     border-radius: 20px;
-    max-width: 900px;
+    width: 70%;
     padding: 20px;
     background-color: white;
 }

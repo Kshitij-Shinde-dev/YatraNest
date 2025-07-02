@@ -71,7 +71,7 @@ function Routepage() {
               >
                 <Button variant=" outline-info text-dark" className='view-button' size="">View Route</Button>
               </a>
-              <Link to={'/Booknow'} className='text-decoration-none'>
+              <Link to={'/Booknow'} state={{ from: route.from, to: route.to }} className='text-decoration-none'>
               <Button variant=" primary"  className='book-button text-decoration-none' size="">Book Now</Button></Link>
             </div>
           </Card.Body>

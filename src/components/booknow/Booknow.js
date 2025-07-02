@@ -2,14 +2,15 @@ import React, { useState } from "react";
 import Card from "react-bootstrap/Card";
 import Select from 'react-select';
 import styles from './Booknow.module.css';
-import { Link } from "react-router-dom";
+import { Link,useLocation  } from "react-router-dom";
 
 function Booknow() {
   const [activeTab, setActiveTab] = useState("booking");
   const [fromCity, setFromCity] = useState(null);
   const [toCity, setToCity] = useState(null);
   const [journeyDate, setJourneyDate] = useState(new Date().toISOString().split("T")[0]);
-  
+  const location = useLocation();
+  const { from, to } = location.state || {};
 
   const cityOptions = [
     { value: 'Nashik', label: 'Nashik' },
@@ -38,10 +39,12 @@ function Booknow() {
            <div className="form-group">
               <label>From</label>
               <Select
-                options={cityOptions}
-                placeholder="Select departure city"
-                value={fromCity}
-                onChange={setFromCity}
+              options={cityOptions}
+              placeholder="Select departure city"
+              isSearchable
+              className="mb-2"
+              defaultValue={cityOptions.find(option => option.value === from)}
+              required
               />
             </div>
 
@@ -52,8 +55,10 @@ function Booknow() {
               <Select
                 options={cityOptions}
                 placeholder="Select destination city"
-                value={toCity}
-                onChange={setToCity}
+                isSearchable
+                className="mb-2"
+                defaultValue={cityOptions.find(option => option.value === to)}
+                required
               />
             </div>
 

@@ -2,6 +2,8 @@ import React from 'react';
 import './Routepage.css';
 import { Card, Button, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { MdKeyboardArrowDown } from "react-icons/md";
+import { CiLocationArrow1 } from "react-icons/ci";
 
 const routes = [
   {
@@ -58,10 +60,7 @@ function Routepage() {
         <Card key={index} className="route-card shadow rounded-4 p-3 mx-auto mb-4" style={{ maxWidth: '900px' }}>
           <Card.Body>
             <Card.Title className="route-se">{route.from} → {route.to}</Card.Title>
-            <Card.Text>
-              <strong>Start Time:</strong> {route.startTime}<br />
-              <strong>End Time:</strong> {route.endTime}
-            </Card.Text>
+        
             <div className="d-flex justify-content-between">
               <a
                 href={route.mapLink}
@@ -69,8 +68,13 @@ function Routepage() {
                 rel="noopener noreferrer"
                 className="text-decoration-none"
               >
-                <Button variant=" outline-info text-dark" className='view-button' size="">View Route</Button>
+                <Button variant=" outline-info text-dark" className='view-button' size=""><CiLocationArrow1  size={35} /> View Route On Map</Button>
               </a>
+
+                 {/* ⬇️ Down Arrow Button */}
+          <Button variant=" " className="down-arrow-button">
+            <MdKeyboardArrowDown className="down-arrow-button-icon" color='' size={25} />
+          </Button>
               <Link to={'/Booknow'} state={{ from: route.from, to: route.to }} className='text-decoration-none'>
               <Button variant=" primary"  className='book-button text-decoration-none' size="">Book Now</Button></Link>
             </div>

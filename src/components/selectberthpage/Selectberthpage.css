@@ -1,5 +1,25 @@
 .seat-card
 {
-    width: 40%;
+    max-width: 24rem;
     height: fit-content;
+    padding-bottom: 3rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 3rem;
+}
+.Steering
+{
+    width: 70px;      
+    height: 70px;     
+    object-fit: contain;
+    margin-left: 73%;
+}
+.St
+{
+    max-width: 55px;      
+    max-height: 50px;     
+    object-fit: contain; 
+}
+.St:hover {
+  transform: scale(1.1);
 }

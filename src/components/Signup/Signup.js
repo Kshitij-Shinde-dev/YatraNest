@@ -40,7 +40,7 @@ function Signup() {
 
     setError('');
     // Redirect to homepage (e.g., "/")
-    navigate('/');
+    navigate('/', { replace: true });
   };
 
   return (
@@ -137,7 +137,7 @@ function Signup() {
               />
               </Col>
             </Form.Group>
-            <Button type="submit" className="signup-button">
+            <Button type="submit" onClick={handleSubmit} className="signup-button">
               Sign Up
             </Button>
           </Form>

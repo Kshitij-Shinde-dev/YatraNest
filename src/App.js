@@ -18,6 +18,7 @@ import Routepage from './components/routepage/Routepage';
 import Bushirepage from './components/bushirepage/Bushirepage';
 import Booknow from './components/booknow/Booknow';
 import Selectberthpage from './components/selectberthpage/Selectberthpage';
+import Profile from './components/profile/Profile';
 function App() {
   return (
     <div>
@@ -40,6 +41,7 @@ function App() {
             <Route path='/Bushirepage' element={<Bushirepage></Bushirepage>}></Route>
             <Route path='/Booknow' element={<Booknow></Booknow>}></Route>
             <Route path='/Selectberthpage' element={<Selectberthpage></Selectberthpage>}></Route>
+            <Route path='/Profile' element={<Profile></Profile>}></Route>
           </Routes>
       </Router>
     </div>

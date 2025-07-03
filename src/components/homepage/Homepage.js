@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import "./Homepage.css";
 import Card from "react-bootstrap/Card";
 import { Table, Row, Col } from "react-bootstrap";
@@ -35,6 +35,19 @@ function Homepage() {
 
     window.location.href = '/Selectberthpage';
   };
+  useEffect(() => {
+  window.history.pushState(null, null, window.location.href);
+  window.onpopstate = () => {
+    window.history.go(1); // disable back
+  };
+  return () => window.onpopstate = null;
+}, []);
+
+  const handleExchange=()=>{
+    const temp = fromCity;
+    setFromCity(toCity);
+    setToCity(temp);
+  }
 
   const renderSection = () => {
     switch (activeTab) {
@@ -51,7 +64,7 @@ function Homepage() {
               />
             </div>
 
-            <div className="exchange-icon">⇄</div>
+            <div className="exchange-icon" onClick={handleExchange}>⇄</div>
 
             <div className="form-group">
               <label>To</label>
@@ -148,7 +161,7 @@ function Homepage() {
             </Col>
 
             <Col>
-              <Card className="align mx-3">
+              <Card className="align">
                 <Card.Body>
                   <Card.Title><BiSolidOffer size={25} color="#28C941" /> Ongoing Offers</Card.Title>
                   <hr />

@@ -25,7 +25,7 @@ function Loginpage() {
     if (token) {
       sessionStorage.setItem("token", token);
       console.log("Token stored:", token);
-      navigate("/");
+      navigate('/', { replace: true });
       console.log("Navigation triggered");
     } else {
       console.log("No token received");

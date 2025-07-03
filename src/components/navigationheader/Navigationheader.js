@@ -31,7 +31,7 @@ function Navigationheader() {
 
             {/* 🔁 Conditional Login/Profile tab */}
             {user ? (
-              <Nav.Link href="/Profilepage" className="navbg spacing">Profile</Nav.Link>
+              <Nav.Link href="/Profile" className="navbg spacing">Profile</Nav.Link>
             ) : (
               <Nav.Link href="/Loginpage" className="navbg spacing">Login</Nav.Link>
             )}

@@ -1,8 +1,11 @@
-import React from 'react';
+import {React,useEffect} from 'react';
 import './Termpage.css';
 import { Card, Table } from 'react-bootstrap';
 
 function Termpage() {
+  useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
   return (
     <div className='main-term d-flex justify-content-center align-items-center'>
       <Card className="card-term shadow p-4 my-4">

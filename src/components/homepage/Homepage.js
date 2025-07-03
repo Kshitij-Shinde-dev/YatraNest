@@ -11,6 +11,8 @@ import { GiPillow, GiFlexibleLamp } from "react-icons/gi";
 import { TiBatteryCharge } from "react-icons/ti";
 import Informationpage from "../informationpage/Informationpage";
 import Select from 'react-select';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Homepage() {
   const [activeTab, setActiveTab] = useState("booking");
@@ -29,7 +31,11 @@ function Homepage() {
 
   const handleSearch = () => {
     if (!fromCity || !toCity || !journeyDate) {
-      alert("Please fill all fields before proceeding.");
+      toast.error("Please fill all fields before proceeding.");
+      return;
+    }
+    if (fromCity.value.trim() === toCity.value.trim()) {
+      toast.warn("Pickup and dropoff points cannot be the same.");
       return;
     }
 
@@ -146,7 +152,7 @@ function Homepage() {
         <div className="d-flex justify-content-center mt-5">
           <Row>
             <Col>
-              <Card className="align">
+              <Card className="align mx-auto my-3">
                 <Card.Body>
                   <Card.Title><IoNotifications size={25} color="red" /> Notification</Card.Title>
                   <hr />
@@ -161,7 +167,7 @@ function Homepage() {
             </Col>
 
             <Col>
-              <Card className="align">
+              <Card className="align mx-auto my-3">
                 <Card.Body>
                   <Card.Title><BiSolidOffer size={25} color="#28C941" /> Ongoing Offers</Card.Title>
                   <hr />
@@ -173,7 +179,7 @@ function Homepage() {
             </Col>
 
             <Col>
-              <Card className="align">
+              <Card className="align mx-auto my-3">
                 <Card.Body>
                   <Card.Title><FaMapLocationDot size={25} color="#4B0082" /> Top Destinations</Card.Title>
                   <hr />
@@ -260,6 +266,16 @@ function Homepage() {
       </div>
 
       <Informationpage />
+      <ToastContainer
+        position="top-center"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        pauseOnHover
+        draggable
+        theme="colored"
+      />
     </div>
   );
 }

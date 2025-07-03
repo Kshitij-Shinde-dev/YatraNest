@@ -2,10 +2,7 @@
 {
     max-width: 24rem;
     height: fit-content;
-    padding-bottom: 3rem;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    margin-top: 3rem;
+    padding-bottom: 1rem;
 }
 .Steering
 {
@@ -21,5 +18,53 @@
     object-fit: contain; 
 }
 .St:hover {
-  transform: scale(1.1);
+    transform: scale(1.1);
+}
+.Book-selected
+{
+    padding: 8px;
+    background-color: orange;
+    color: white;
+    border: none;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    max-height: fit-content;
+    max-width: fit-content;
+}
+.Pick-drop-card
+{
+    max-width: 60rem;
+    border-radius: 12px;
+    overflow: hidden;  
+}
+.detail-card
+{
+    max-width: 60rem;
+    border-radius: 12px;
+    overflow: hidden;  
+}
+.detail-header
+{
+    background-color: #eae9d3;
+    color: #327f8c;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    padding: 12px;
+}
+.pick-and-drop-header
+{
+    background-color: #eae9d3;
+    color: #327f8c;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    padding: 12px;
+    
+}
+.form-group2 {
+  margin: 10px;
+  flex: 1 1 200px;
+  display: flex;
+  flex-direction: column;
+  min-width: 45%;
 }

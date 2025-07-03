@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Routepage.css';
 import { Card, Button, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { CiLocationArrow1 } from "react-icons/ci";
+
 
 const routes = [
   {
@@ -51,6 +52,10 @@ const routes = [
 ];
 
 function Routepage() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className='bg-route'>
     <Container className="py-4">

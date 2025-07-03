@@ -54,7 +54,7 @@ function Informationpage() {
         </Row>
       </Container>
       <div className='copyright d-flex justify-content-center mt-3'>
-        <>©2025, All Rights Reserved,<Link className='info-copy mx-2 me-2'> YatraNest</Link> | Powered by IRTCM India Private Limited</>
+        <p className='text-center'>©2025, All Rights Reserved, <span className='brandname'>YatraNest </span> | Powered by IRTCM India Private Limited</p>
       </div>
     </div>
   );

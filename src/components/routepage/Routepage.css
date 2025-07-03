@@ -40,3 +40,22 @@
     color: #327f8c !important;
     font-weight: 700;
 }
+.down-arrow-button
+{
+  border: none;
+  margin-top: 2rem;
+}
+.down-arrow-button-icon
+{
+  color: rgb(162, 160, 160);
+}
+
+.down-arrow-button-icon:hover
+{
+  color: grey;
+}
+.view-button
+{
+  margin-top:1rem;
+  padding: 0;
+}

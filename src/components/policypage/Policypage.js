@@ -1,8 +1,11 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import './Policypage.css'
 import { Card } from 'react-bootstrap'
 
 function Policypage() {
+  useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
   return (
     <div className=' main-policy d-flex justify-content-center align-items-center'>
       <Card className="card-term shadow p-4 my-4">

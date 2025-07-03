@@ -1,9 +1,17 @@
+<<<<<<< saurabh
 import React, { useState } from "react";
 import "./Routepage.css";
 import { Card, Button, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
+=======
+import React, { useEffect } from 'react';
+import './Routepage.css';
+import { Card, Button, Container } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+>>>>>>> kshitij
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { CiLocationArrow1 } from "react-icons/ci";
+
 
 const routes = [
   {
@@ -65,11 +73,17 @@ const routes = [
 ];
 
 function Routepage() {
+<<<<<<< saurabh
   const [openIndex, setOpenIndex] = useState(null);
 
   const toggleStops = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
+=======
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+>>>>>>> kshitij
 
   return (
     <div className="bg-route">

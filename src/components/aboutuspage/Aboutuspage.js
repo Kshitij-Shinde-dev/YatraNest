@@ -1,8 +1,11 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import "./Aboutuspage.css"
 import { Card } from 'react-bootstrap'
 
 function Aboutuspage() {
+  useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
   return (
 
     <div className='main-about d-flex justify-content-center '>

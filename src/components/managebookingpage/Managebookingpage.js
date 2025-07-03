@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card, Button, Container, Row, Col, Form, Badge } from 'react-bootstrap';
 import jsPDF from 'jspdf';
 import 'jspdf-autotable';
@@ -28,6 +28,10 @@ const sampleBookings = [
 ];
 
 function Managebookingpage() {
+  useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
+    
   const [search, setSearch] = useState('');
 
   const filteredBookings = sampleBookings.filter(b =>

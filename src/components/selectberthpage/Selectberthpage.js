@@ -96,10 +96,20 @@ function Selectberthpage() {
     const [drop, setDropoff] = useState(null);
 
     const pickupoptions = [
-      
+      { value: 'Nashik', label: 'Nashik' },
+    { value: 'Mumbai', label: 'Mumbai' },
+    { value: 'Pune', label: 'Pune' },
+    { value: 'Shirdi', label: 'Shirdi' },
+    { value: 'Shrirampur', label: 'Shrirampur' },
+    { value: 'Solapur', label: 'Solapur' },
     ];
     const dropoffoptions = [
-
+      { value: 'Nashik', label: 'Nashik' },
+    { value: 'Mumbai', label: 'Mumbai' },
+    { value: 'Pune', label: 'Pune' },
+    { value: 'Shirdi', label: 'Shirdi' },
+    { value: 'Shrirampur', label: 'Shrirampur' },
+    { value: 'Solapur', label: 'Solapur' },
     ];
 
   return (

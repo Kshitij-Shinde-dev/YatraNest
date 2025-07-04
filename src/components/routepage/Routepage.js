@@ -1,5 +1,7 @@
 
-import React, { useEffect } from 'react';
+
+import React, { useEffect,useState } from 'react';
+
 import './Routepage.css';
 import { Card, Button, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
@@ -73,9 +75,17 @@ function Routepage() {
   const toggleStops = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
+
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
 
   return (
     <div className="bg-route">
@@ -120,7 +130,7 @@ function Routepage() {
                 </Button>
 
                 <Link
-                  to="/Booknow"
+                  to="/Buspage"
                   state={{ from: route.from, to: route.to }}
                   className="text-decoration-none"
                 >

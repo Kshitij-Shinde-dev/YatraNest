@@ -19,6 +19,7 @@ import Bushirepage from './components/bushirepage/Bushirepage';
 import Booknow from './components/booknow/Booknow';
 import Selectberthpage from './components/selectberthpage/Selectberthpage';
 import Profile from './components/profile/Profile';
+import Buspage from './components/buspage/Buspage';
 function App() {
   return (
     <div>
@@ -42,6 +43,7 @@ function App() {
             <Route path='/Booknow' element={<Booknow></Booknow>}></Route>
             <Route path='/Selectberthpage' element={<Selectberthpage></Selectberthpage>}></Route>
             <Route path='/Profile' element={<Profile></Profile>}></Route>
+            <Route path='/Buspage' element={<Buspage></Buspage>}></Route>
           </Routes>
       </Router>
     </div>

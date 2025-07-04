@@ -119,7 +119,6 @@ function Homepage() {
             <button className="hire-button mx-auto d-block">HIRE BUSES</button>
           </div>
         );
-
       default:
         return null;
     }
@@ -147,7 +146,6 @@ function Homepage() {
             {renderSection()}
           </Card>
         </div>
-
         {/* Notification / Offers / Top Destinations */}
         <div className="d-flex justify-content-center mt-5">
           <Row>
@@ -231,7 +229,6 @@ function Homepage() {
                 </Card.Body>
               </Card>
             </Col>
-
             <Col>
               <Card className="facility-card mt-2 bg-light">
                 <Card.Body>
@@ -264,7 +261,6 @@ function Homepage() {
           </Row>
         </div>
       </div>
-
       <Informationpage />
       <ToastContainer
         position="top-center"

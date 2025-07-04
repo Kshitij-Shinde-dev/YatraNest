@@ -1,10 +1,13 @@
 
+
 import React, { useEffect,useState } from 'react';
+
 import './Routepage.css';
 import { Card, Button, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { CiLocationArrow1 } from "react-icons/ci";
+import { useState } from 'react';
 
 
 const routes = [
@@ -72,6 +75,12 @@ function Routepage() {
   const toggleStops = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
+
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
 
   useEffect(() => {
     window.scrollTo(0, 0);

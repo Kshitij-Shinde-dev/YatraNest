@@ -13,13 +13,14 @@ import Informationpage from "../informationpage/Informationpage";
 import Select from 'react-select';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate } from "react-router-dom";
 
 function Homepage() {
   const [activeTab, setActiveTab] = useState("booking");
   const [fromCity, setFromCity] = useState(null);
   const [toCity, setToCity] = useState(null);
   const [journeyDate, setJourneyDate] = useState(new Date().toISOString().split("T")[0]);
-
+  const navigate=useNavigate();
   const cityOptions = [
     { value: 'Nashik', label: 'Nashik' },
     { value: 'Mumbai', label: 'Mumbai' },
@@ -39,7 +40,7 @@ function Homepage() {
       return;
     }
 
-    window.location.href = '/Selectberthpage';
+    navigate('/Buspage',{state:{from:fromCity.value,to:toCity.value,journeyDate:journeyDate.value}});
   };
   useEffect(() => {
   window.history.pushState(null, null, window.location.href);

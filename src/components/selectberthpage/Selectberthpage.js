@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import './Selectberthpage.css';
 import { Button, Card, Col, Container, Row, ListGroup } from 'react-bootstrap';
 import Select from 'react-select';
@@ -37,6 +37,10 @@ function Selectberthpage() {
     { id: 27, type: 'available', selected: false ,price: '₹1100'},
     { id: 28, type: 'available', selected: false ,price: '₹1100'},
   ]);
+
+  useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
 
   const getSeatImage = (type, selected) => {
     if (selected) return '/Images/seats/seater_selected.svg';

@@ -9,17 +9,9 @@ function Booknow() {
   const [fromCity, setFromCity] = useState(null);
   const [toCity, setToCity] = useState(null);
   const [journeyDate, setJourneyDate] = useState(new Date().toISOString().split("T")[0]);
-  const location = useLocation();
-  const { from, to } = location.state || {};
 
-  const cityOptions = [
-    { value: 'Nashik', label: 'Nashik' },
-    { value: 'Mumbai', label: 'Mumbai' },
-    { value: 'Pune', label: 'Pune' },
-    { value: 'Shirdi', label: 'Shirdi' },
-    { value: 'Shrirampur', label: 'Shrirampur' },
-    { value: 'Solapur', label: 'Solapur' },
-  ];
+  const location=useLocation();
+  const {to,from}=location.state()||{};
 
    const handleSearch = () => {
     if (!fromCity || !toCity || !journeyDate) {
@@ -39,11 +31,11 @@ function Booknow() {
            <div className="form-group">
               <label>From</label>
               <Select
-              options={cityOptions}
+              options={null}
               placeholder="Select departure city"
               isSearchable
               className="mb-2"
-              defaultValue={cityOptions.find(option => option.value === from)}
+              defaultValue={({to})}
               required
               />
             </div>
@@ -53,11 +45,11 @@ function Booknow() {
             <div className="form-group">
               <label>To</label>
               <Select
-                options={cityOptions}
+                options={null}
                 placeholder="Select destination city"
                 isSearchable
                 className="mb-2"
-                defaultValue={cityOptions.find(option => option.value === to)}
+                defaultValue={({from})}
                 required
               />
             </div>
@@ -77,25 +69,6 @@ function Booknow() {
                 <Link to={'/Selectberthpage'} className="text-decoration-none">
               <button className={styles.searchButton}>SEARCH</button></Link>
             </div>
-          </div>
-        );
-
-      case "hire":
-        return (
-          <div className={styles.formSection}>
-            <div className={styles.formGroup}>
-              <label>City of Hire eg: Bangalore</label><br />
-              <input type="text" placeholder="Bangalore" />
-            </div>
-            <div className={styles.formGroup}>
-              <label>Starting Point eg: Railway station</label>
-              <input type="text" placeholder="Railway Station" />
-            </div>
-            <div className={styles.formGroup}>
-              <label>Destination eg: Airport/Pune</label><br />
-              <input type="text" placeholder="Airport/Pune" />
-            </div>
-            <button className={`${styles.hireButton} mx-auto d-block`}>HIRE BUSES</button>
           </div>
         );
 

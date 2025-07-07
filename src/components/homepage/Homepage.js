@@ -14,7 +14,7 @@ import Select from 'react-select';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from "react-router-dom";
-
+import { Link } from "react-router-dom";
 function Homepage() {
   const [activeTab, setActiveTab] = useState("booking");
   const [fromCity, setFromCity] = useState(null);
@@ -147,6 +147,9 @@ function Homepage() {
             {renderSection()}
           </Card>
         </div>
+
+
+
         {/* Notification / Offers / Top Destinations */}
         <div className="d-flex justify-content-center mt-5">
           <Row>
@@ -183,6 +186,7 @@ function Homepage() {
                   <Card.Title><FaMapLocationDot size={25} color="#4B0082" /> Top Destinations</Card.Title>
                   <hr />
                   <Card.Text>
+                    <Link to='/Routepage' className="no-decoration text-dark">
                     <ul>
                       <li>Pune - Nashik</li>
                       <li>Pune - Shrirampur</li>
@@ -190,6 +194,7 @@ function Homepage() {
                       <li>Pune - Mumbai</li>
                       <li>Pune - Shirdi</li>
                     </ul>
+                    </Link>
                   </Card.Text>
                 </Card.Body>
               </Card>

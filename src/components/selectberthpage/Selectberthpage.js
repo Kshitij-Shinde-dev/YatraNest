@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import './Selectberthpage.css';
 import { Button, Card, Col, Container, Row, ListGroup } from 'react-bootstrap';
 import Select from 'react-select';
@@ -37,6 +37,10 @@ function Selectberthpage() {
     { id: 27, type: 'available', selected: false ,price: '₹1100'},
     { id: 28, type: 'available', selected: false ,price: '₹1100'},
   ]);
+
+  useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
 
   const getSeatImage = (type, selected) => {
     if (selected) return '/Images/seats/seater_selected.svg';
@@ -134,32 +138,55 @@ function Selectberthpage() {
       </Row>
       <Row>
         <Container>
-        <Card className='Pick-drop-card shadow mx-4 my-4'>
-          <Card.Header as="h5" className='text-center pick-and-drop-header'>Select pickup and dropoff points</Card.Header>
-          <Card.Body>
-            <div className="form-group2">
-              <label>From</label>
-              <Select
-                options={pickupoptions}
-                placeholder="Select Pickup-point"
-                value={pick}
-                onChange={setPickup}
-                required
-              />
-            </div>
-            <div className="form-group2">
-              <label>To</label>
-              <Select
-                options={dropoffoptions}
-                placeholder="Select dropoff-point"
-                value={drop}
-                onChange={setDropoff}
-                required
-              />
-              </div>
-          </Card.Body>
-        </Card>
-        </Container>
+      <Card className="Pick-drop-card shadow mx-4 my-4">
+        <Card.Header as="h5" className="text-center pick-and-drop-header">
+          Select pickup and dropoff points
+        </Card.Header>
+        <Card.Body>
+          <div className="form-group2 mb-3">
+            <label className="form-label fw-bold">From</label>
+            <Select
+              options={pickupoptions}
+              placeholder="Select Pickup-point"
+              value={pick}
+              onChange={setPickup}
+              className="w-100"
+              menuPortalTarget={document.body}
+              menuPosition="fixed"
+              styles={{
+                menuPortal: (base) => ({ ...base, zIndex: 9999 }),
+                control: (base) => ({
+                  ...base,
+                  minHeight: 45,
+                  fontSize: '1rem',
+                }),
+              }}
+            />
+          </div>
+
+          <div className="form-group2 mb-3">
+            <label className="form-label fw-bold">To</label>
+            <Select
+              options={dropoffoptions}
+              placeholder="Select Dropoff-point"
+              value={drop}
+              onChange={setDropoff}
+              className="w-100"
+              menuPortalTarget={document.body}
+              menuPosition="fixed"
+              styles={{
+                menuPortal: (base) => ({ ...base, zIndex: 9999 }),
+                control: (base) => ({
+                  ...base,
+                  minHeight: 45,
+                  fontSize: '1rem',
+                }),
+              }}
+            />
+          </div>
+        </Card.Body>
+      </Card>
+    </Container>
         </Row>
         <Row>
           <Row className="justify-content-center my-4">

@@ -1,30 +1,27 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { useLocation, useNavigate, Link } from "react-router-dom";
 import { Card, Container, Button, Row, Col, Form, Offcanvas } from "react-bootstrap";
 import "./Buspage.css";
-
-const buses = [
-  {
-    from: "Pune",
-    to: "Shrirampur",
-    buses: [
-      { departure: "6:00 AM", arrival: "10:00 AM", type: "acSleeper" },
-      { departure: "7:30 AM", arrival: "11:30 AM", type: "nonAcSleeper" },
-      { departure: "9:00 AM", arrival: "1:00 PM", type: "acSeater" },
-      { departure: "10:30 AM", arrival: "2:30 PM", type: "nonAcSeater" },
-      { departure: "12:00 PM", arrival: "4:00 PM", type: "acSleeper" },
-      { departure: "1:30 PM", arrival: "5:30 PM", type: "nonAcSeater" },
-    ],
-  },
-];
 
 function Buspage() {
   const location = useLocation();
   const navigate = useNavigate();
   const { from, to } = location.state || {};
+  useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
 
-  const selectedRoute = buses.find(
-    (route) => route.from === from && route.to === to
+  const allBuses = [
+    { from: "Pune", to: "Shrirampur", departure: "6:00 AM", arrival: "10:00 AM", type: "acSleeper" },
+    { from: "Pune", to: "Shrirampur", departure: "7:30 AM", arrival: "11:30 AM", type: "nonAcSleeper" },
+    { from: "Pune", to: "Shrirampur", departure: "9:00 AM", arrival: "1:00 PM", type: "acSeater" },
+    { from: "Pune", to: "Shrirampur", departure: "10:30 AM", arrival: "2:30 PM", type: "nonAcSeater" },
+    { from: "Pune", to: "Shrirampur", departure: "12:00 PM", arrival: "4:00 PM", type: "acSleeper" },
+    { from: "Pune", to: "Shrirampur", departure: "1:30 PM", arrival: "5:30 PM", type: "nonAcSeater" },
+  ];
+
+  const filteredBuses = allBuses.filter(
+    (bus) => bus.from === from && bus.to === to
   );
 
   const [showFilter, setShowFilter] = useState(false);
@@ -45,11 +42,11 @@ function Buspage() {
     setSelectedBusType("");
   };
 
-  if (!selectedRoute) {
+  if (!from || !to) {
     return (
       <Container className="py-4 text-center">
         <h2>Route not found!</h2>
-        <Button onClick={() => navigate("/")}>Back to Routes</Button>
+        <Button onClick={() => navigate("/")}>Back to Homepage</Button>
       </Container>
     );
   }
@@ -58,64 +55,57 @@ function Buspage() {
     <div className="bg-route">
       <Container className="py-4">
         <h2 className="text-center head-bus-route mb-4 text-primary">
-          {selectedRoute.from} → {selectedRoute.to}
+          {from} → {to}
         </h2>
 
-        {/* Filter Toggle Button */}
-        <Button
-          variant="outline-primary"
-          onClick={() => setShowFilter(true)}
-          className="mb-4"
-        >
+        {/* Filter Toggle */}
+        <Button variant="outline-primary" onClick={() => setShowFilter(true)} className="mb-4">
           Filter Options
         </Button>
 
-        {/* Filter Sidebar Offcanvas */}
+        {/* Filter Sidebar */}
         <Offcanvas show={showFilter} onHide={() => setShowFilter(false)}>
           <Offcanvas.Header closeButton>
             <Offcanvas.Title>Bus Type Filter</Offcanvas.Title>
           </Offcanvas.Header>
           <Offcanvas.Body>
-           <Form>
-  {busTypes.map((type) => (
-    <div key={type.value} className="custom-radio">
-      <input
-        type="radio"
-        id={type.value}
-        name="busType"
-        value={type.value}
-        checked={selectedBusType === type.value}
-        onChange={handleFilterChange}
-      />
-      <label htmlFor={type.value}>{type.label}</label>
-    </div>
-  ))}
-
-  <div className="custom-radio">
-    <input
-      type="radio"
-      id="showAll"
-      name="busType"
-      value=""
-      checked={selectedBusType === ""}
-      onChange={handleFilterChange}
-    />
-    {/* <label htmlFor="showAll">Show All</label> */}
-  </div>
-
-  <hr />
-  <Button variant="secondary" onClick={clearFilters} className="mt-2">
-    Clear Filter
-  </Button>
-</Form>
-
+            <Form>
+              {busTypes.map((type) => (
+                <div key={type.value} className="custom-radio">
+                  <input
+                    type="radio"
+                    id={type.value}
+                    name="busType"
+                    value={type.value}
+                    checked={selectedBusType === type.value}
+                    onChange={handleFilterChange}
+                  />
+                  <label htmlFor={type.value}>{type.label}</label>
+                </div>
+              ))}
+              <div className="custom-radio">
+                <input
+                  type="radio"
+                  id="showAll"
+                  name="busType"
+                  value=""
+                  checked={selectedBusType === ""}
+                  onChange={handleFilterChange}
+                />
+                <label htmlFor="showAll">Show All</label>
+              </div>
+              <hr />
+              <Button variant="secondary" onClick={clearFilters} className="mt-2">
+                Clear Filter
+              </Button>
+            </Form>
           </Offcanvas.Body>
         </Offcanvas>
 
         {/* Bus Cards */}
         <Row>
           <Col xs={12}>
-            {selectedRoute.buses
+            {filteredBuses
               .filter((bus) => !selectedBusType || bus.type === selectedBusType)
               .map((bus, index) => {
                 const baseFare = 700;
@@ -131,14 +121,13 @@ function Buspage() {
                           <p><strong>Arrival:</strong> {bus.arrival}</p>
                           <p><strong>Type:</strong> {typeDetails?.label || "N/A"}</p>
                         </Col>
-                        <Col
-                          xs="auto"
-                          className="d-flex flex-column justify-content-between align-items-end"
-                        >
-                          <p className="text-success fw-semibold mb-2">
-                            ₹{fare}
-                          </p>
-                          <Link to="/Selectberthpage" className="no-decoration">
+                        <Col xs="auto" className="d-flex flex-column justify-content-between align-items-end">
+                          <p className="text-success fw-semibold mb-2">₹{fare}</p>
+                          <Link
+                            to="/Selectberthpage"
+                            state={{ from, to, departure: bus.departure, arrival: bus.arrival, fare }}
+                            className="no-decoration"
+                          >
                             <Button variant="primary" className="view-seats-button">
                               View Seats
                             </Button>

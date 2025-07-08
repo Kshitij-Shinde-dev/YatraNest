@@ -119,7 +119,7 @@ function Routepage() {
                 </Button>
 
                 <Link
-                  to="/Buspage"
+                  to="/Booknow"
                   state={{ from: route.from, to: route.to }}
                   className="text-decoration-none"
                 >

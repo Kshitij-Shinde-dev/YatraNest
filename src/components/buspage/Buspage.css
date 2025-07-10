@@ -1,12 +1,18 @@
-.head-bus-route
-{
-    color:  #317a80;;
+/* Full gray background for Buspage container */
+.bg-route {
+  background-color: #f0f0f0; /* light gray */
+  min-height: 100vh;
+  padding-bottom: 2rem;
 }
-.view-seats-button
-{
-   
-    display: block;
-  /* margin: 1.5rem auto 0; */
+
+/* Heading style */
+.head-bus-route {
+  color: #317a80 !important;
+}
+
+/* View Seats Button */
+.view-seats-button {
+  display: block;
   background-color: #fca652 !important;
   color: white;
   border: none;
@@ -18,21 +24,40 @@
   transition: background-color 0.3s ease;
   text-decoration: none;
 }
-.view-seats-button:hover {
 
+.view-seats-button:hover {
   background-color: #e28c3d !important;
   color: #e0e0e0;
 }
 
+/* Card hover effect */
 .buspage-card:hover {
   transform: scale(1.01);
   transition: 0.3s ease;
 }
+
+/* Prevent underline in links */
 .no-decoration {
   text-decoration: none !important;
   color: inherit;
 }
-/* Highlighted filter radio button style */
+
+/* Filter button styling */
+.filter-button-orange {
+  background-color: #ff7f50; /* Coral / Orange tone */
+  border: none;
+  color: white;
+  font-weight: 600;
+  padding: 8px 20px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.filter-button-orange:hover {
+  background-color: #ff5722 !important; /* Deeper orange on hover */
+}
+
+/* Custom radio button styles */
 .custom-radio label {
   display: block;
   padding: 10px 12px;
@@ -43,16 +68,35 @@
   font-size: 16px;
   font-weight: 500;
   background-color: #f9f9f9;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
+/* Hover effect for radio options */
+.custom-radio label:hover {
+   /* light orange tint */
+  border-color: #ff9800 !important;     /* deeper orange */
+  color: #d84315 !important;            /* darker text */
+  transform: scale(1.02);
+  box-shadow: 0 3px 10px rgba(255, 152, 0, 0.3);
+}
+
+/* Hide actual radio button input */
 .custom-radio input[type="radio"] {
   display: none;
 }
 
+/* Checked radio button style */
 .custom-radio input[type="radio"]:checked + label {
-  border-color: #0d6efd;
+  border-color: #0d6efd !important;
   background-color: #e8f0fe;
-  color: #0d6efd;
+  color: #0d6efd !important;
   font-weight: 600;
+}
+.icon-bus
+{
+   margin-right: 10px;
+    font-size: 1.2rem; 
+    color: #0d6efd
+
 }

@@ -115,7 +115,6 @@ function Selectberthpage() {
     { value: 'Shrirampur', label: 'Shrirampur' },
     { value: 'Solapur', label: 'Solapur' },
     ];
-
   return (
     <div>
       <Row>
